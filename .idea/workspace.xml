@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/fxml/login.fxml" afterPath="$PROJECT_DIR$/src/sample/fxml/login.fxml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -73,15 +74,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.fxml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="login.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/fxml/login.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="59" lean-forward="true" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
-              <folding />
+            <state relative-caret-position="405">
+              <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+              <folding>
+                <marker date="1492116647000" expanded="true" signature="361:1310" ph="..." />
+                <marker date="1492116647000" expanded="true" signature="407:1302" ph="..." />
+                <marker date="1492116647000" expanded="true" signature="465:546" ph="..." />
+                <marker date="1492116647000" expanded="true" signature="481:531" ph="..." />
+                <marker date="1492116647000" expanded="true" signature="607:688" ph="..." />
+                <marker date="1492116647000" expanded="true" signature="623:673" ph="..." />
+                <marker date="1492116647000" expanded="true" signature="749:830" ph="..." />
+                <marker date="1492116647000" expanded="true" signature="765:815" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,7 +119,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registration.fxml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="registration.fxml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sample/fxml/registration.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder">
             <state />
@@ -136,6 +146,11 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -389,7 +404,7 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1492115006291" duration="811000" />
-      <workItem from="1492116223400" duration="44000" />
+      <workItem from="1492116223400" duration="380000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit.">
       <created>1492115504140</created>
@@ -405,11 +420,18 @@
       <option name="project" value="LOCAL" />
       <updated>1492116260111</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Edit login.fxml&#10;">
+      <created>1492116281047</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1492116281047</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2157000" />
+    <option name="totallyTimeSpent" value="2493000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="823" extended-state="6" />
@@ -459,7 +481,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
+    <MESSAGE value="Edit login.fxml&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit login.fxml&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -487,7 +510,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding />
+          <folding>
+            <marker date="1492116647000" expanded="true" signature="361:1310" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="407:1302" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="465:546" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="481:531" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="607:688" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="623:673" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="749:830" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="765:815" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -568,6 +600,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/fxml/login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="28" column="14" lean-forward="true" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding>
+            <marker date="1492116647000" expanded="true" signature="361:1310" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="407:1302" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="465:546" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="481:531" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="607:688" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="623:673" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="749:830" ph="..." />
+            <marker date="1492116647000" expanded="true" signature="765:815" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/fxml/sample.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -586,17 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/fxml/login.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="59" lean-forward="true" selection-start-line="7" selection-start-column="59" selection-end-line="7" selection-end-column="59" />
           <folding />
         </state>
       </provider>
