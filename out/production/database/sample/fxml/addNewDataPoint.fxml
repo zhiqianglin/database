@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="99.0" layoutY="54.0" text="Add a new data point">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="131.0" text="POI location name:" />
+      <MenuButton layoutX="220.0" layoutY="126.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="188.0" text="Chatthochee River">
+        <items>
+          <MenuItem mnemonicParsing="false" text="Action 1" />
+          <MenuItem mnemonicParsing="false" text="Action 2" />
+        </items>
+      </MenuButton>
+      <Button layoutX="420.0" layoutY="126.0" mnemonicParsing="false" text="Add a new location" />
+      <Label layoutX="25.0" layoutY="187.0" text="Time and date of data reading:" />
+      <Label layoutX="149.0" layoutY="226.0" text="Data type:" />
+      <MenuButton layoutX="222.0" layoutY="220.0" mnemonicParsing="false" text="Mold">
+         <items>
+            <MenuItem mnemonicParsing="false" text="Action 1" />
+            <MenuItem mnemonicParsing="false" text="Action 2" />
+         </items>
+      </MenuButton>
+      <Label layoutX="149.0" layoutY="272.0" text="Data value:" />
+      <Button layoutX="218.0" layoutY="321.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="61.0" text="Back" />
+      <Button layoutX="408.0" layoutY="321.0" mnemonicParsing="false" text="Submit" />
+      <TextField layoutX="225.0" layoutY="267.0" prefHeight="27.0" prefWidth="286.0" />
+   </children>
+</Pane>
