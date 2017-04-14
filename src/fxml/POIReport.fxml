@@ -5,15 +5,14 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="798.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.POIReport">
    <children>
       <Label layoutX="229.0" layoutY="52.0" text="POI Report">
          <font>
             <Font size="22.0" />
          </font>
       </Label>
-      <Button layoutX="426.0" layoutY="330.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="426.0" layoutY="330.0" mnemonicParsing="false" onAction="#back" text="Back" />
       <TableView layoutX="14.0" layoutY="92.0" prefHeight="200.0" prefWidth="761.0">
         <columns>
           <TableColumn prefWidth="75.0" text="POI Location" />
