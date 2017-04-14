@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="185.0" layoutY="46.0" text="Pending City Official Accounts" />
+      <TableView layoutX="74.0" layoutY="87.0" prefHeight="200.0" prefWidth="452.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Select" />
+          <TableColumn prefWidth="75.0" text="Username" />
+            <TableColumn prefWidth="75.0" text="Email" />
+            <TableColumn prefWidth="75.0" text="City" />
+            <TableColumn prefWidth="75.0" text="State" />
+            <TableColumn prefWidth="75.0" text="Title" />
+        </columns>
+      </TableView>
+      <Button layoutX="102.0" layoutY="316.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="241.0" layoutY="316.0" mnemonicParsing="false" text="Reject" />
+      <Button layoutX="412.0" layoutY="316.0" mnemonicParsing="false" text="Accept" />
+   </children>
+</Pane>
