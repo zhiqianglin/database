@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.RegisterController">
    <children>
       <Label layoutX="106.0" layoutY="29.0" text="Registration" textAlignment="CENTER">
          <font>
@@ -23,8 +26,8 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <TextField layoutX="183.0" layoutY="98.0" prefHeight="27.0" prefWidth="188.0" />
-      <TextField layoutX="183.0" layoutY="149.0" prefHeight="27.0" prefWidth="188.0" />
+      <TextField fx:id="username" layoutX="183.0" layoutY="98.0" prefHeight="27.0" prefWidth="188.0" />
+      <TextField fx:id="email" layoutX="183.0" layoutY="149.0" prefHeight="27.0" prefWidth="188.0" />
       <Label layoutX="30.0" layoutY="202.0" prefHeight="23.0" prefWidth="116.0" text="Password:">
          <font>
             <Font size="15.0" />
@@ -40,22 +43,22 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <PasswordField layoutX="183.0" layoutY="200.0" prefHeight="27.0" prefWidth="188.0" />
-      <PasswordField layoutX="183.0" layoutY="252.0" prefHeight="27.0" prefWidth="188.0" />
+      <PasswordField fx:id="password" layoutX="183.0" layoutY="200.0" prefHeight="27.0" prefWidth="188.0" />
+      <PasswordField fx:id="password2" layoutX="183.0" layoutY="252.0" prefHeight="27.0" prefWidth="188.0" />
       <Label layoutX="30.0" layoutY="359.0" prefHeight="17.0" prefWidth="273.0" text="Fill out this form if you choose City Officials" />
-      <MenuButton layoutX="183.0" layoutY="301.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="City Officials">
+      <MenuButton fx:id="userType" layoutX="183.0" layoutY="301.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="City Officials">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
       </MenuButton>
-      <MenuButton layoutX="183.0" layoutY="399.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="Atlanta">
+      <MenuButton fx:id="city" layoutX="183.0" layoutY="399.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="Atlanta">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
             <MenuItem mnemonicParsing="false" text="Action 2" />
          </items>
       </MenuButton>
-      <MenuButton layoutX="183.0" layoutY="441.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="Georgia">
+      <MenuButton fx:id="state" layoutX="183.0" layoutY="441.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="136.0" text="Georgia">
          <items>
             <MenuItem mnemonicParsing="false" text="Action 1" />
             <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -64,8 +67,8 @@
       <Label layoutX="102.0" layoutY="404.0" prefHeight="17.0" prefWidth="35.0" text="City:" />
       <Label layoutX="102.0" layoutY="446.0" prefHeight="17.0" prefWidth="54.0" text="State:" />
       <Label layoutX="102.0" layoutY="489.0" prefHeight="17.0" prefWidth="54.0" text="Titile:" />
-      <TextField layoutX="183.0" layoutY="484.0" />
-      <Button layoutX="157.0" layoutY="534.0" mnemonicParsing="false" text="Create">
+      <TextField fx:id="title" layoutX="183.0" layoutY="484.0" />
+      <Button fx:id="create" layoutX="157.0" layoutY="534.0" mnemonicParsing="false" text="Create" onAction="#handleButtonClick" >
          <font>
             <Font size="19.0" />
          </font>
