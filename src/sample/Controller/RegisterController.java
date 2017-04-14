@@ -1,10 +1,8 @@
-package sample;
+package sample.Controller;
 
-import java.net.URL;
 import java.sql.SQLException;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
@@ -12,6 +10,9 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import sample.Model.User;
+
+import sample.DAO.userDAO;
 
 
 public class RegisterController {
@@ -83,7 +84,7 @@ public class RegisterController {
         }
         User temp = new User(username.getText(), email.getText(), password.getText(), userType.getText(), city.getText(),
                             state.getText(), title.getText());
-        String result = "";
+        String result = null;
 
         try {
             result = userDAO.insertUser(temp);

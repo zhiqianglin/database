@@ -1,8 +1,10 @@
-package sample;
+package sample.DAO;
 
 /**
  * Created by JARVIS on 4/14/17.
  */
+import sample.Model.User;
+
 import java.sql.SQLException;
 import java.util.*;
 
@@ -57,6 +59,6 @@ public class userDAO {
         if (updatedRows != 0)
             return "New record added";
         else
-            return "Invalid input. Please double check!";
+            return "The username has been registered. Please choose another one.";
     }
 }
