@@ -20,8 +20,8 @@ public class LoginController {
         if (username.getText().equals("") || password.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Missing credentials");
-            alert.setHeaderText("Please enter username and password.");
-            alert.setContentText("Click register if you don't have an account.");
+            alert.setHeaderText(null);
+            alert.setContentText("Please enter username and password.\n\nRegister if you don't have an account.");
 
             alert.showAndWait();
         } else {
@@ -35,6 +35,5 @@ public class LoginController {
     public void register(ActionEvent actionEvent) throws IOException {
         System.out.println(this.getClass());
         Helper.changeScene(actionEvent, this.getClass());
-
     }
 }

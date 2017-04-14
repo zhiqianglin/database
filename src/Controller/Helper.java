@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,5 +25,15 @@ public class Helper {
 
         stageTheEventSourceNodeBelongs.setScene(scene);
         stageTheEventSourceNodeBelongs.show();
+    }
+
+    public static void showAlert(String title, String info){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(info);
+
+        alert.showAndWait();
+
     }
 }
