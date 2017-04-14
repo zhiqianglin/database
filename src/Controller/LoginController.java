@@ -1,13 +1,9 @@
+package Controller;
+
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
-import javafx.fxml.FXMLLoader;
 
 import java.io.IOException;
 
@@ -37,20 +33,8 @@ public class LoginController {
     }
 
     public void register(ActionEvent actionEvent) throws IOException {
-        Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+        System.out.println(this.getClass());
+        Helper.changeScene(actionEvent, this.getClass());
 
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/registration.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("sample/fxml/registration.fxml"));
-
-        Scene scene = new Scene(root);
-
-        stageTheEventSourceNodeBelongs.setScene(scene);
-        stageTheEventSourceNodeBelongs.show();
-
-
-
-//        primaryStage.setTitle("Hello World");
-//        primaryStage.setScene(new Scene(root, 600, 400));
-//        primaryStage.show();
     }
 }
