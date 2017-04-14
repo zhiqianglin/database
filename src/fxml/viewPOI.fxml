@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="581.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ViewPOIs">
+   <children>
+      <Label layoutX="219.0" layoutY="48.0" text="View POIs">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="99.0" layoutY="96.0" text="POI location name" />
+      <Label layoutX="121.0" layoutY="134.0" text="City" />
+      <Label layoutX="117.0" layoutY="166.0" text="State" />
+      <Label layoutX="117.0" layoutY="200.0" text="Zip code" />
+      <Label layoutX="117.0" layoutY="232.0" text="Flagged?" />
+      <Label layoutX="117.0" layoutY="268.0" text="Date Flagged" />
+      <TextField fx:id="zipcode" layoutX="240.0" layoutY="195.0" />
+      <ChoiceBox fx:id="poiLocationNames" layoutX="240.0" layoutY="91.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="cities" layoutX="240.0" layoutY="129.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="states" layoutX="240.0" layoutY="161.0" prefWidth="150.0" />
+      <CheckBox fx:id="flagged" layoutX="240.0" layoutY="232.0" mnemonicParsing="false" text="CheckBox" />
+      <DatePicker fx:id="dataFlaggedMin" layoutX="227.0" layoutY="263.0" prefHeight="27.0" prefWidth="93.0" />
+      <Label layoutX="329.0" layoutY="268.0" text="to" />
+      <DatePicker fx:id="dataFlaggedMax" layoutX="362.0" layoutY="263.0" prefHeight="27.0" prefWidth="82.0" />
+      <Button layoutX="328.0" layoutY="347.0" mnemonicParsing="false" onAction="#applyFilter" text="Apply Filter" />
+      <Button layoutX="459.0" layoutY="347.0" mnemonicParsing="false" onAction="#resetFilter" text="Reset Filter" />
+      <Separator layoutX="11.0" layoutY="391.0" prefHeight="5.0" prefWidth="577.0" />
+      <Button layoutX="286.0" layoutY="517.0" mnemonicParsing="false" onAction="#back" text="Back" />
+   </children>
+</Pane>
