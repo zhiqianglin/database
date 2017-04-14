@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a1d069f0-d5e6-4469-9e79-8be0a3b593ae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/DAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/DBUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/RegisterController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/sample/userDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/database/sample/Main.class" afterPath="$PROJECT_DIR$/out/production/database/sample/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.iml" afterPath="$PROJECT_DIR$/database.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/database/sample/fxml/login.fxml" afterPath="$PROJECT_DIR$/out/production/database/sample/fxml/login.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/database/sample/fxml/registration.fxml" afterPath="$PROJECT_DIR$/out/production/database/sample/fxml/registration.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/Main.java" afterPath="$PROJECT_DIR$/src/sample/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/fxml/registration.fxml" afterPath="$PROJECT_DIR$/src/sample/fxml/registration.fxml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -566,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492116881944</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="register">
+      <created>1492191602028</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1492191602028</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
