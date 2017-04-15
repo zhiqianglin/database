@@ -139,6 +139,15 @@ public class RegisterController {
             alert.showAndWait();
             return;
         }
+        if (!email.getText().contains("@")) {
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Information Dialog");
+            alert.setHeaderText(null);
+            alert.setContentText("Please use a valid email address");
+
+            alert.showAndWait();
+            return;
+        }
         if (password.getText().trim().isEmpty()) {
             Alert alert = new Alert(AlertType.INFORMATION);
             alert.setTitle("Information Dialog");
@@ -167,7 +176,8 @@ public class RegisterController {
             return;
         }
 
-        User temp = new User(username.getText(), email.getText(), password.getText(), "Asd",
+        User temp = new User(username.getText(), email.getText(), password.getText(),
+                            userType.getSelectionModel().getSelectedItem().toString(),
                             city.getSelectionModel().getSelectedItem().toString(),
                             state.getSelectionModel().getSelectedItem().toString(), title.getText());
         String result = null;
