@@ -10,7 +10,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/RuomengXu_CSE6730_HW1/Airport/Xuruomeng_house/mysql-connector-java-5.0.8-bin.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/mysql-connector-java-5.0.8-bin.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
