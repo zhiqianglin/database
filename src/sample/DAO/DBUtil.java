@@ -50,7 +50,7 @@ public class DBUtil {
             // Store result in a list
             while (rs.next()) {
                 List<String> row = new LinkedList<>();
-                for (int i = 1; i < rsmd.getColumnCount(); i ++) {
+                for (int i = 1; i <= rsmd.getColumnCount(); i ++) {
                     row.add(rs.getString(i));
                 }
                 result.add(row);

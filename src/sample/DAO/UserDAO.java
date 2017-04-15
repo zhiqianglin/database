@@ -8,8 +8,8 @@ import sample.Model.User;
 import java.sql.SQLException;
 import java.util.*;
 
-public class userDAO {
-    // search by username
+public class UserDAO {
+
     private static final String USER_TABLE = "user";
     private static final String USER_NAME = "username";
     private static final String EMAIL = "email";
@@ -27,7 +27,7 @@ public class userDAO {
 
         try {
             List<List<String>> result = DBUtil.dbExcuteQuery(queryStatement);
-
+            // Convert result to a 1D LinkedList
             ListIterator<List<String>> iter1 = result.listIterator();
             while(iter1.hasNext()) {
                 ListIterator<String> iter2 = iter1.next().listIterator();
