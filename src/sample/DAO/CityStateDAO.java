@@ -24,12 +24,6 @@ public class CityStateDAO {
         } catch (SQLException e){
             System.out.println(e);
         }
-        ListIterator<List<String>> iter1 = result.listIterator();
-        while(iter1.hasNext()) {
-            ListIterator<String> iter2 = iter1.next().listIterator();
-            while(iter2.hasNext())
-                System.out.println(iter2.next());
-        }
         return result;
     }
 
