@@ -1,4 +1,4 @@
-package sample.Controller;
+package Controller;
 
 import java.sql.SQLException;
 import java.util.*;
@@ -11,11 +11,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.Pane;
-import javafx.event.*;
-import sample.DAO.CityStateDAO;
-import sample.Model.User;
+import DAO.CityStateDAO;
+import Model.User;
 
-import sample.DAO.UserDAO;
+import DAO.UserDAO;
 
 
 public class RegisterController {

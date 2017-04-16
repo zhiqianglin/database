@@ -1,9 +1,9 @@
-package sample.DAO;
+package DAO;
 
 /**
  * Created by JARVIS on 4/14/17.
  */
-import sample.Model.User;
+import Model.User;
 
 import java.sql.SQLException;
 import java.util.*;

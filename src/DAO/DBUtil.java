@@ -1,4 +1,4 @@
-package sample.DAO;
+package DAO;
 
 /**
  * Created by JARVIS on 4/14/17.
@@ -12,7 +12,7 @@ public class DBUtil {
     private static final String JDBC_DRIVE = "com.mysql.jdbc.Driver";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/test";
     private static final String DB_USER = "root";
-    private static final String DB_PASSWORD = "123";
+    private static final String DB_PASSWORD = "1234";
 
     private static Connection con = null;
 

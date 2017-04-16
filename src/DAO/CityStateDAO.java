@@ -1,4 +1,4 @@
-package sample.DAO;
+package DAO;
 
 /**
  * Created by JARVIS on 4/14/17.
