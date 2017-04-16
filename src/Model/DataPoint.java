@@ -21,8 +21,10 @@ public class DataPoint {
     private final SimpleStringProperty locationName;
     private final SimpleStringProperty dataType;
     private final SimpleIntegerProperty dataValue;
-    private final SimpleObjectProperty<LocalDateTime> dateTime;
-    private SimpleBooleanProperty selected;
+
+    //TODO: USE STRING?
+    private final SimpleObjectProperty<LocalDateTime> dateTime; //String?
+    private SimpleBooleanProperty selected; //String??
 
     public DataPoint(String locationName, LocalDateTime dateTime, String dataType, int dataValue) {
         this.locationName = new SimpleStringProperty(locationName);
