@@ -1,5 +1,3 @@
-
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,6 +11,10 @@ public class Main extends Application {
 //        Parent root = FXMLLoader.load(getClass().getResource("fxml/login.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("fxml/registration.fxml"));
 //        Parent root = FXMLLoader.load(getClass().getResource("./fxml/addNewDataPoint.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("./fxml/pendingDataPoints.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("./fxml/viewPOI.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("./fxml/POIDetailController.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("./fxml/POIReport.fxml"));
 //        Parent root = FXMLLoader.load(getClass().getResource("./fxml/pendingDataPoints.fxml"));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 400, 600));
