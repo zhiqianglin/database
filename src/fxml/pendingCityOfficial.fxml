@@ -19,6 +19,6 @@
       </TableView>
       <Button layoutX="102.0" layoutY="316.0" mnemonicParsing="false" onAction="#back" text="Back" />
       <Button layoutX="241.0" layoutY="316.0" mnemonicParsing="false" onAction="#reject" text="Reject" />
-      <Button layoutX="412.0" layoutY="316.0" mnemonicParsing="false" onAction="#accpet" text="Accept" />
+      <Button layoutX="412.0" layoutY="316.0" mnemonicParsing="false" onAction="#accept" text="Accept" />
    </children>
 </Pane>

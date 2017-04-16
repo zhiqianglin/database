@@ -12,6 +12,6 @@ public class PendingCityOfficial {
     public void reject(ActionEvent actionEvent) {
     }
 
-    public void accpet(ActionEvent actionEvent) {
+    public void accept(ActionEvent actionEvent) {
     }
 }

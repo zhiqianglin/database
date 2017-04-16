@@ -8,6 +8,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import com.jfoenix.controls.JFXDatePicker;
@@ -41,20 +42,21 @@ public class AddDataPointController {
     }
 
     public void submit(ActionEvent actionEvent) {
+        LocalDateTime a = date.getValue().atTime(time.getValue());
+        System.out.println(a);
         try {
-            int a = Integer.parseInt(dataValue.getText());
+            int value = Integer.parseInt(dataValue.getText());
         }
         catch (Exception e){
             Helper.showAlert("Wrong value", "Please enter valid data value");
             return;
         }
-        System.out.println(date.getClass());
+        System.out.println(date.getValue().getClass());
         System.out.println(locationNames.getValue());
         System.out.println(dataType.getValue());
         System.out.println(dataValue.getText());
         System.out.println(time.getValue());
         //write to database
-
 
     }
 
