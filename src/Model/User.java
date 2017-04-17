@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.List;
+
 /**
  * Created by JARVIS on 4/13/17.
  */
@@ -21,6 +23,10 @@ public class User {
         this.city = city;
         this.state = state;
         this.title = title;
+    }
+
+    public User(List<String> userInfo) {
+
     }
 
     public String getUserName() {

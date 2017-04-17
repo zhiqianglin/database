@@ -7,6 +7,7 @@ import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
@@ -175,6 +176,10 @@ public class RegisterController {
             return;
         }
 
+//        if (userType.getSelectionModel().getSelectedItem().equals("City officials") && title.getText().trim().isEmpty()) {
+//            Helper.showAlert("Information Dialog", "Title required if you are a city official");
+//        }
+
         User temp = new User(username.getText(), email.getText(), password.getText(),
                             userType.getSelectionModel().getSelectedItem().toString(),
                             city.getSelectionModel().getSelectedItem().toString(),
@@ -202,7 +207,7 @@ public class RegisterController {
      *  The handler for the cancel button. Simply close the window.
      */
     @FXML
-    public void handleCancelClick() throws SQLException, ClassNotFoundException{
-        Platform.exit();
+    public void handleCancelClick(ActionEvent e) throws SQLException, ClassNotFoundException{
+        Helper.changeScene(e, this.getClass(), Helper.LOGIN);
     }
 }
