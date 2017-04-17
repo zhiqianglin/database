@@ -3,6 +3,7 @@ package DAO;
 /**
  * Created by JARVIS on 4/14/17.
  */
+import Controller.Helper;
 import Model.User;
 
 import java.sql.SQLException;
@@ -37,6 +38,28 @@ public class UserDAO {
         } catch (SQLException e) {
             System.out.println(e);
         }
+    }
+
+    public static User findUserByUsername(String username) {
+        String queryStatement = "SELECT * FROM " + USER_TABLE + " WHERE " + USER_NAME + " = '" + username + "'";
+        User user = null;
+        try {
+            List<List<String>> result = DBUtil.dbExcuteQuery(queryStatement);
+            if (result.size() == 0) {
+                System.out.println("Not found");
+            } else {
+                List<String> userInfo = result.get(0);
+                for (String info : userInfo) {
+                    System.out.println(info);
+                }
+            }
+        }
+        catch (Exception e) {
+            Helper.showAlert("Error", e.getMessage());
+            return user;
+        }
+
+        return user;
     }
 
     /*

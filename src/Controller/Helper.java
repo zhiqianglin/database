@@ -15,16 +15,25 @@ import java.io.IOException;
  */
 public class Helper {
 
-    public static void changeScene(ActionEvent actionEvent, Class c) throws IOException {
-        Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
+    private final static String PATH = "../fxml/";
+    public static final String REGISTER = "registration.fxml";
+    public static final String LOGIN = "login.fxml";
+
+    public static void changeScene(ActionEvent actionEvent, Class c, String view) {
+        try {
+            Stage stageTheEventSourceNodeBelongs = (Stage) ((Node)actionEvent.getSource()).getScene().getWindow();
 
 //        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml/registration.fxml"));
-        Parent root = FXMLLoader.load(c.getResource("../fxml/registration.fxml")); // Path
+            Parent root = FXMLLoader.load(c.getResource(PATH + view)); // Path
 
-        Scene scene = new Scene(root);
+            Scene scene = new Scene(root);
 
-        stageTheEventSourceNodeBelongs.setScene(scene);
-        stageTheEventSourceNodeBelongs.show();
+            stageTheEventSourceNodeBelongs.setScene(scene);
+            stageTheEventSourceNodeBelongs.show();
+        }
+        catch (IOException e) {
+            showAlert("Error", "View not found");
+        }
     }
 
     public static void showAlert(String title, String info){

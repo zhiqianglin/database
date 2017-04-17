@@ -8,8 +8,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-//        Parent root = FXMLLoader.load(getClass().getResource("fxml/login.fxml"));
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/registration.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("fxml/login.fxml"));
+//        Parent root = FXMLLoader.load(getClass().getResource("fxml/registration.fxml"));
 //        Parent root = FXMLLoader.load(getClass().getResource("./fxml/addNewDataPoint.fxml"));
 //        Parent root = FXMLLoader.load(getClass().getResource("./fxml/pendingDataPoints.fxml"));
 //        Parent root = FXMLLoader.load(getClass().getResource("./fxml/viewPOI.fxml"));
@@ -21,7 +21,7 @@ public class Main extends Application {
 //        Parent root = FXMLLoader.load(getClass().getResource("./fxml/POIDetailController.fxml"));
 
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 400, 600));
+        primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
     }
 
