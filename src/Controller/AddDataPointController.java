@@ -62,5 +62,10 @@ public class AddDataPointController {
 
     public void back(ActionEvent actionEvent) {
         System.out.println("Going back. To be implemented");
+        Helper.changeScene(actionEvent, this.getClass(), Helper.LOGIN);
+    }
+
+    public void addNewLocation(ActionEvent actionEvent) {
+        Helper.changeScene(actionEvent, this.getClass(), Helper.ADD_NEW_LOCATION);
     }
 }

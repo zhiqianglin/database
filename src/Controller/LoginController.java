@@ -33,10 +33,47 @@ public class LoginController {
 
         System.out.println(username.getText());
         System.out.println(password.getText());
-        User currUser = DAO.UserDAO.findUserByUsername(username.getText());
-        if (currUser == null) {
-            Helper.showAlert("Error", "No account found. Please enter valid information.");
+
+        //TODO: FINDUSER, RETURN USER OBJECT OR NULL
+//        User currUser = UserDAO.findUserByUsername(username.getText());
+//        if (currUser == null) {
+        //            Helper.showAlert("Error", "No account found. Please enter valid information.");
+
+//            return;
+
+//        }
+        //Authenticate
+        // if (!currUser.getPassword().equals(password.getText())) {
+//              Helper.showAlert("Error", "Incorrect Password");
+        // }
+//        if (currUser.getUserType().equals("City officials")) {
+//            Helper.changeScene(actionEvent, this.getClass(), "view");
+//        }
+
+
+        //TODO: REMOVE THESE CODE
+        if (!DAO.UserDAO.hasUser(username.getText())) {
+            Helper.showAlert("Error", "No account found.");
+            return;
         }
+
+        String userType = "City officials";
+//        String userType = "City scientist";
+//        String userType = "Administrator";
+        if (userType.equals("City officials")) {
+            Helper.changeScene(actionEvent, this.getClass(), Helper.CHOOSE_FUNCTIONALITY_CITY_OFFICIAL);
+        }
+
+        if (userType.equals("Administrator")) {
+            Helper.changeScene(actionEvent, this.getClass(), Helper.CHOOSE_FUNCTIONALITY_ADMIN);
+        }
+
+        if (userType.equals("City scientist")) {
+            Helper.changeScene(actionEvent, this.getClass(), Helper.CITY_SCIENTIST);
+
+        }
+
+
     }
 
     public void register(ActionEvent actionEvent) throws IOException {

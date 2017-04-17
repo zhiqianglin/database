@@ -43,13 +43,15 @@ public class POIReportController {
         aqAvgCol.setCellValueFactory(new PropertyValueFactory<POIReport, Double>("aqAvg"));
         numDataPointCol.setCellValueFactory(new PropertyValueFactory<POIReport, Integer>("numOfDataPoint"));
         reportTable.setItems(report);
-        reportTable.setItems(report);
+
+        report.add(new POIReport("Georgia Tech", "Atlanta", "Georgia", 2, 43.1, 160, 3, 33.4, 84,
+                52, false));
 
 
     }
 
     public void back(ActionEvent actionEvent) {
-        report.add(new POIReport("Georgia Tech", "Atlanta", "Georgia", 2, 43.1, 160, 3, 33.4, 84,
-        52, false));
+
+        Helper.changeScene(actionEvent, this.getClass(), Helper.CHOOSE_FUNCTIONALITY_CITY_OFFICIAL);
     }
 }

@@ -62,6 +62,26 @@ public class UserDAO {
         return user;
     }
 
+    public static boolean hasUser(String userName) {
+        String queryStatement = "SELECT * FROM " + USER_TABLE + " WHERE " + USER_NAME + " = '" + userName + "'";
+        try {
+            List<List<String>> result = DBUtil.dbExcuteQuery(queryStatement);
+            if (result.size() == 0) {
+                return false;
+            } else {
+                List<String> userInfo = result.get(0);
+                for (String info : userInfo) {
+                    System.out.println(info);
+                }
+                return true;
+            }
+        }
+        catch (Exception e) {
+            Helper.showAlert("Error", e.getMessage());
+        }
+        return false;
+    }
+
     /*
      *  Insert a new user
      */
