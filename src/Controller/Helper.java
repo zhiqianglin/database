@@ -18,6 +18,15 @@ public class Helper {
     private final static String PATH = "../fxml/";
     public static final String REGISTER = "registration.fxml";
     public static final String LOGIN = "login.fxml";
+    public static final String CITY_SCIENTIST = "addNewDataPoint.fxml";
+    public static final String ADD_NEW_LOCATION = "addNewPOILocation.fxml";
+    public static final String PENDING_CITY_OFFICIAL = "pendingCityOfficial.fxml";
+    public static final String PENDING_DATA_POINTS = "pendingDataPoints.fxml";
+    public static final String CHOOSE_FUNCTIONALITY_ADMIN = "chooseFunctionalityAdmin.fxml";
+    public static final String CHOOSE_FUNCTIONALITY_CITY_OFFICIAL = "chooseFunctionalityCityOfficial.fxml";
+    public static final String VIEW_POI = "viewPOI.fxml";
+    public static final String POI_REPORT = "POIReport.fxml";
+
 
     public static void changeScene(ActionEvent actionEvent, Class c, String view) {
         try {

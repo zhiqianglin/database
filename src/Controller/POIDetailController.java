@@ -56,6 +56,7 @@ public class POIDetailController {
     }
 
     public void back(ActionEvent actionEvent) {
+        Helper.changeScene(actionEvent, this.getClass(), Helper.CHOOSE_FUNCTIONALITY_CITY_OFFICIAL);
     }
 
     public void flag(ActionEvent actionEvent) {

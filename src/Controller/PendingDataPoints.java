@@ -111,5 +111,6 @@ public class PendingDataPoints {
     }
 
     public void back(ActionEvent actionEvent) {
+        Helper.changeScene(actionEvent, this.getClass(), Helper.CHOOSE_FUNCTIONALITY_ADMIN);
     }
 }

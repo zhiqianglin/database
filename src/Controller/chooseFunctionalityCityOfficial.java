@@ -7,11 +7,15 @@ import javafx.event.ActionEvent;
  */
 public class chooseFunctionalityCityOfficial {
     public void searchPOI(ActionEvent actionEvent) {
+        Helper.changeScene(actionEvent, this.getClass(), Helper.VIEW_POI);
+
     }
 
     public void viewPOIReport(ActionEvent actionEvent) {
+        Helper.changeScene(actionEvent, this.getClass(), Helper.POI_REPORT);
     }
 
     public void logOut(ActionEvent actionEvent) {
+        Helper.changeScene(actionEvent, this.getClass(), Helper.LOGIN);
     }
 }
