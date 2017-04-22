@@ -2,6 +2,7 @@ package Model;
 
 import javafx.beans.property.*;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -13,7 +14,7 @@ import java.time.format.DateTimeFormatter;
 public class DataPoint {
 
 //    public TextField dataValue;
-//    public ChoiceBox locationNames;
+//    public ChoiceBox locationName;
 //    public ChoiceBox dataType;
 //    public DatePicker date;
 //    public JFXTimePicker time;
@@ -23,15 +24,23 @@ public class DataPoint {
     private final SimpleIntegerProperty dataValue;
 
     //TODO: USE STRING?
-    private final SimpleObjectProperty<LocalDateTime> dateTime; //String?
+    private final SimpleObjectProperty<Timestamp> dateTime; //String?
     private SimpleBooleanProperty selected; //String??
+    private SimpleBooleanProperty accepted;
 
-    public DataPoint(String locationName, LocalDateTime dateTime, String dataType, int dataValue) {
+    public DataPoint(String locationName, Timestamp dateTime, String dataType, int dataValue) {
         this.locationName = new SimpleStringProperty(locationName);
         this.dataType = new SimpleStringProperty(dataType);
         this.dataValue = new SimpleIntegerProperty(dataValue);
-        this.dateTime = new SimpleObjectProperty<LocalDateTime>(dateTime);
+        this.dateTime = new SimpleObjectProperty<>(dateTime);
         this.selected = new SimpleBooleanProperty();
+        this.accepted = null;
+    }
+
+    public DataPoint(String locationName, Timestamp dateTime, String dataType, int dataValue, boolean accepted) {
+
+        this(locationName, dateTime, dataType, dataValue);
+        this.accepted = new SimpleBooleanProperty(accepted);
     }
 
     public String getLocationName() {
@@ -46,7 +55,7 @@ public class DataPoint {
         return dataValue.get();
     }
 
-    public LocalDateTime getDateTime() {
+    public Timestamp getDateTime() {
         return dateTime.get();
     }
 
@@ -68,5 +77,17 @@ public class DataPoint {
     public final void setSelected(final boolean selected) {
         this.selectedProperty().set(selected);
     }
+
+    public final boolean isAccepted() {
+        return this.accepted.get();
+    }
+
+
+    public String toString() {
+        String out = this.getLocationName() + ", " + this.getDateTime() + ", " + this.getDataType() + ", "
+                + this.getDataValue();
+        return out;
+    }
+
 
 }

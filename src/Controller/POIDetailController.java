@@ -7,6 +7,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.Month;
 
@@ -43,12 +45,12 @@ public class POIDetailController {
 
         //TODO: USE DYNAMIC DATA
 
-        data.add(new DataPoint("Atlanta", LocalDateTime.now(), "mold", 123));
-        data.add(new DataPoint("Roswell", LocalDateTime.of(2013, Month.JUNE, 15, 11, 32)
+        data.add(new DataPoint("Atlanta", Timestamp.valueOf(LocalDateTime.now()), "mold", 123));
+        data.add(new DataPoint("Roswell", Timestamp.valueOf(LocalDateTime.of(2013, Month.JUNE, 15, 11, 32))
                 , "mole", 456));
-        data.add(new DataPoint("Dunwoody", LocalDateTime.of(2013, Month.APRIL, 29, 10, 39)
+        data.add(new DataPoint("Dunwoody", Timestamp.valueOf(LocalDateTime.of(2013, Month.APRIL, 29, 10, 39))
                 , "air", 456));
-        data.add(new DataPoint("Marietta", LocalDateTime.of(2017, Month.JANUARY, 13, 9, 40)
+        data.add(new DataPoint("Marietta", Timestamp.valueOf(LocalDateTime.of(2017, Month.JANUARY, 13, 9, 40))
                 , "air", 456));
     }
 

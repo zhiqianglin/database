@@ -3,7 +3,9 @@ package DAO;
 /**
  * Created by JARVIS on 4/14/17.
  */
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.*;
 
 public class CityStateDAO {
@@ -14,7 +16,7 @@ public class CityStateDAO {
     private static final String STATE = "state";
 
     /*
-     *  Retrieve all states
+     *  Retrieve all state
      */
     public static List<List<String>> findAllState() throws SQLException, ClassNotFoundException {
         String query = "SELECT DISTINCT " + STATE + " FROM " + CITY_STATE_TABLE + " ORDER BY " + STATE;
@@ -41,4 +43,78 @@ public class CityStateDAO {
         }
         return result;
     }
+
+    public static List<String> queryAllCity() throws SQLException, ClassNotFoundException {
+        String query = "SELECT * FROM " + CITY_STATE_TABLE + " ORDER BY " + CITY;
+        System.out.println(query);
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        List<String> result = new LinkedList<>();
+
+        DBUtil.dbConnection();
+        stmt = DBUtil.con.createStatement();
+        rs = stmt.executeQuery(query);
+
+        // Store result in a list
+        while (rs.next()) {
+            result.add(rs.getString("city"));
+        }
+
+        // it is a good idea to release resources in a finally{} block in reverse-order of their creation
+        // if they are no-longer needed
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException sqlEx) { } // ignore
+            rs = null;
+        }
+        if (stmt != null) {
+            try {
+                stmt.close();
+            } catch (SQLException sqlEx) { } // ignore
+            stmt = null;
+        }
+        DBUtil.dbDisconnect();
+
+        return result;
+    }
+
+    public static List<String> queryAllState() throws SQLException, ClassNotFoundException {
+        String query = "SELECT * FROM " + CITY_STATE_TABLE + " ORDER BY " + STATE;
+        System.out.println(query);
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        List<String> result = new LinkedList<>();
+
+        DBUtil.dbConnection();
+        stmt = DBUtil.con.createStatement();
+        rs = stmt.executeQuery(query);
+
+        // Store result in a list
+        while (rs.next()) {
+            result.add(rs.getString("state"));
+        }
+
+        // it is a good idea to release resources in a finally{} block in reverse-order of their creation
+        // if they are no-longer needed
+        if (rs != null) {
+            try {
+                rs.close();
+            } catch (SQLException sqlEx) { } // ignore
+            rs = null;
+        }
+        if (stmt != null) {
+            try {
+                stmt.close();
+            } catch (SQLException sqlEx) { } // ignore
+            stmt = null;
+        }
+        DBUtil.dbDisconnect();
+
+        return result;
+    }
+
+
 }

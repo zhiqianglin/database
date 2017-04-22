@@ -31,48 +31,34 @@ public class LoginController {
         }
 
 
-        System.out.println(username.getText());
-        System.out.println(password.getText());
 
         //TODO: FINDUSER, RETURN USER OBJECT OR NULL
-//        User currUser = UserDAO.findUserByUsername(username.getText());
-//        if (currUser == null) {
-        //            Helper.showAlert("Error", "No account found. Please enter valid information.");
+        User currUser = UserDAO.findUserByUsername(username.getText());
 
-//            return;
-
-//        }
-        //Authenticate
-        // if (!currUser.getPassword().equals(password.getText())) {
-//              Helper.showAlert("Error", "Incorrect Password");
-        // }
-//        if (currUser.getUserType().equals("City officials")) {
-//            Helper.changeScene(actionEvent, this.getClass(), "view");
-//        }
-
-
-        //TODO: REMOVE THESE CODE
-        if (!DAO.UserDAO.hasUser(username.getText())) {
+        if (currUser == null) {
             Helper.showAlert("Error", "No account found.");
             return;
         }
 
-        String userType = "City officials";
-//        String userType = "City scientist";
-//        String userType = "Administrator";
-        if (userType.equals("City officials")) {
+        if (!currUser.getPassword().equals((password.getText()))) {
+            Helper.showAlert("Error", "Password incorrect! Please enter again");
+            return;
+        }
+
+//        String userType = "City officials";
+////        String userType = "City scientist";
+////        String userType = "Administrator";
+        if (currUser.getUserType().equals("City Official")) {
             Helper.changeScene(actionEvent, this.getClass(), Helper.CHOOSE_FUNCTIONALITY_CITY_OFFICIAL);
         }
 
-        if (userType.equals("Administrator")) {
+        if (currUser.getUserType().equals("Administrator")) {
             Helper.changeScene(actionEvent, this.getClass(), Helper.CHOOSE_FUNCTIONALITY_ADMIN);
         }
 
-        if (userType.equals("City scientist")) {
+        if (currUser.getUserType().equals("City Scientist")) {
             Helper.changeScene(actionEvent, this.getClass(), Helper.CITY_SCIENTIST);
-
         }
-
 
     }
 

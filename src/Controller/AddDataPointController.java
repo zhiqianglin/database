@@ -1,15 +1,23 @@
 package Controller;
 
+import DAO.DataPointDAO;
+import DAO.DataTypeDAO;
+import DAO.POIDAO;
+import Model.DataPoint;
 import com.jfoenix.controls.JFXTimePicker;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.List;
+
 
 import com.jfoenix.controls.JFXDatePicker;
 
@@ -20,7 +28,7 @@ import com.jfoenix.controls.JFXDatePicker;
 public class AddDataPointController {
 
     public TextField dataValue;
-    public ChoiceBox locationNames;
+    public ChoiceBox locationName;
     public ChoiceBox dataType;
     public DatePicker date;
     public JFXTimePicker time;
@@ -28,12 +36,30 @@ public class AddDataPointController {
 
     public void initialize() {
         //get the values of the locations DYNAMICALLY
-        locationNames.getItems().addAll("Hello", "World");
-        locationNames.getSelectionModel().selectFirst();
+//        locationName.getItems().addAll("Hello", "World");
+//        locationName.getSelectionModel().selectFirst();
 
+        ObservableList<String> dataTypes = null;
+        ObservableList<String> locationNames = null;
+
+        try {
+            locationNames = FXCollections.observableList(POIDAO.queryAllLocationNames());
+        } catch (Exception e) {
+            Helper.showAlert("Error", "Unable to retrieve location names from database.\n" + e.getMessage());
+
+        }
         //get the DataType Dynamically
-        dataType.getItems().addAll("Mold", "Whatever");
+        try {
+            dataTypes = FXCollections.observableList(DataTypeDAO.queryDataType());
+        } catch (Exception e) {
+            Helper.showAlert("Error", "Unable to retrieve data types from database.\n" + e.getMessage());
+
+        }
+        dataType.setItems(dataTypes);
         dataType.getSelectionModel().selectFirst();
+
+        locationName.setItems(locationNames);
+        locationName.getSelectionModel().selectFirst();
 
         date.setValue(LocalDate.now());
         time.setValue(LocalTime.now());
@@ -43,20 +69,30 @@ public class AddDataPointController {
 
     public void submit(ActionEvent actionEvent) {
         LocalDateTime a = date.getValue().atTime(time.getValue());
-        System.out.println(a);
+//        System.out.println(a);
+        int value;
         try {
-            int value = Integer.parseInt(dataValue.getText());
+            value = Integer.parseInt(dataValue.getText());
         }
         catch (Exception e){
             Helper.showAlert("Wrong value", "Please enter valid data value");
             return;
         }
-        System.out.println(date.getValue().getClass());
-        System.out.println(locationNames.getValue());
-        System.out.println(dataType.getValue());
-        System.out.println(dataValue.getText());
-        System.out.println(time.getValue());
-        //write to database
+
+
+
+        Timestamp timestamp = Timestamp.valueOf(LocalDateTime.of(date.getValue(), time.getValue()));
+
+        DataPoint dp = new DataPoint(locationName.getValue().toString(), timestamp, dataType.getValue().toString(), value);
+        System.out.println(dp);
+        try {
+            DataPointDAO.insertDataPoint(dp);
+            Helper.showAlert("Success", "Data point created, please wait for approval");
+        } catch (Exception e) {
+            Helper.showAlert("Error", "Unable to create datapoint\n" + e.getMessage());
+        }
+
+
 
     }
 
@@ -68,4 +104,6 @@ public class AddDataPointController {
     public void addNewLocation(ActionEvent actionEvent) {
         Helper.changeScene(actionEvent, this.getClass(), Helper.ADD_NEW_LOCATION);
     }
+
+
 }

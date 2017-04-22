@@ -4,6 +4,7 @@ package DAO;
  * Created by JARVIS on 4/14/17.
  */
 import Controller.Helper;
+import Controller.RegisterController;
 import Model.User;
 
 import java.sql.SQLException;
@@ -49,9 +50,8 @@ public class UserDAO {
                 System.out.println("Not found");
             } else {
                 List<String> userInfo = result.get(0);
-                for (String info : userInfo) {
-                    System.out.println(info);
-                }
+//                System.out.println(userInfo.size());
+                user = new User(userInfo);
             }
         }
         catch (Exception e) {
@@ -81,27 +81,55 @@ public class UserDAO {
         }
         return false;
     }
+//
+//    /*
+//     *  Insert a new user
+//     */
+//    public static String insertUser(User newUser) throws SQLException, ClassNotFoundException {
+//        String insertStatement = "INSERT INTO " + USER_TABLE + "( " +  USER_NAME + ", " + EMAIL + ", " +
+//                            PASSWORD + ", " + USER_TYPE + ", " + CITY + ", " + STATE + ", " + TITLE +
+//                            ") VALUES ('" + newUser.getUserName() + "', '" + newUser.getEmail() + "', '" +
+//                            newUser.getPassword() + "', '" + newUser.getUserType() + "', '" + newUser.getCity()
+//                            + "', '" + newUser.getState() + "', '" + newUser.getTitle() + "')";
+//        int updatedRows = 0;
+//
+//        try {
+//            updatedRows = DBUtil.dbExecuteUpdate(insertStatement);
+//        } catch (SQLException e) {
+//            System.out.println(e);
+//        }
+//
+//        if (updatedRows != 0)
+//            return "New record added";
+//        else
+//            return "The username has been registered. Please choose another one.";
+//    }
+
+
 
     /*
-     *  Insert a new user
+     *  Insert a new user /NEW
      */
-    public static String insertUser(User newUser) throws SQLException, ClassNotFoundException {
-        String insertStatement = "INSERT INTO " + USER_TABLE + "( " +  USER_NAME + ", " + EMAIL + ", " +
-                            PASSWORD + ", " + USER_TYPE + ", " + CITY + ", " + STATE + ", " + TITLE +
-                            ") VALUES ('" + newUser.getUserName() + "', '" + newUser.getEmail() + "', '" +
-                            newUser.getPassword() + "', '" + newUser.getUserType() + "', '" + newUser.getCity()
-                            + "', '" + newUser.getState() + "', '" + newUser.getTitle() + "')";
+    public static boolean insertUser(User newUser) throws ClassNotFoundException, SQLException{
+        String insertStatement = "INSERT INTO " + USER_TABLE + "(" +  USER_NAME + ", " + EMAIL + ", " +
+                PASSWORD + ", " + USER_TYPE +
+                ") VALUES ('" + newUser.getUserName() + "', '" + newUser.getEmail() + "', '" +
+                newUser.getPassword() + "', '" + newUser.getUserType() +  "')";
+
+        System.out.println(insertStatement);
         int updatedRows = 0;
 
-        try {
-            updatedRows = DBUtil.dbExecuteUpdate(insertStatement);
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
+
+        updatedRows = DBUtil.dbExecuteUpdate(insertStatement);
 
         if (updatedRows != 0)
-            return "New record added";
+            return true;
         else
-            return "The username has been registered. Please choose another one.";
+            return false;
+    }
+
+    public static boolean deleteUser(User user){
+        //
+        return false;
     }
 }

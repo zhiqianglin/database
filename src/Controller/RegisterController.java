@@ -3,6 +3,9 @@ package Controller;
 import java.sql.SQLException;
 import java.util.*;
 
+import DAO.CityOfficialDAO;
+import DAO.DBUtil;
+import Model.CityOfficial;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -16,6 +19,8 @@ import DAO.CityStateDAO;
 import Model.User;
 
 import DAO.UserDAO;
+
+import javax.swing.*;
 
 
 public class RegisterController {
@@ -65,7 +70,7 @@ public class RegisterController {
         state.setItems(stateData);
         state.getSelectionModel().selectFirst();
 
-        // Get the default cities of the default state
+        // Get the default city of the default state
         String curState = state.getSelectionModel().getSelectedItem().toString();
         List<List<String>> curCities = CityStateDAO.findAllCity(curState);
         // Convert query result to a 1D LinkedList
@@ -118,16 +123,17 @@ public class RegisterController {
      *  new record into the database.
      */
     @FXML
-    public void handleCreateClick() throws SQLException, ClassNotFoundException{
+    public void handleCreateClick(ActionEvent ae){
 
         // Check the validity of all input fields
         if (username.getText().trim().isEmpty()) {
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Information Dialog");
-            alert.setHeaderText(null);
-            alert.setContentText("Username cannot be empty");
+//            Alert alert = new Alert(AlertType.INFORMATION);
+//            alert.setTitle("Information Dialog");
+//            alert.setHeaderText(null);
+//            alert.setContentText("Username cannot be empty");
 
-            alert.showAndWait();
+//            alert.showAndWait();
+             Helper.showAlert("A", "a");
             return;
         }
         if (email.getText().trim().isEmpty()) {
@@ -175,32 +181,61 @@ public class RegisterController {
             alert.showAndWait();
             return;
         }
+//        System.out.println(city.getSelectionModel().getSelectedItem().getClass());
 
-//        if (userType.getSelectionModel().getSelectedItem().equals("City officials") && title.getText().trim().isEmpty()) {
-//            Helper.showAlert("Information Dialog", "Title required if you are a city official");
-//        }
-
-        User temp = new User(username.getText(), email.getText(), password.getText(),
-                            userType.getSelectionModel().getSelectedItem().toString(),
-                            city.getSelectionModel().getSelectedItem().toString(),
-                            state.getSelectionModel().getSelectedItem().toString(), title.getText());
-        String result = null;
-
-        // Insert the new user to database, return the result of the insertion
-        try {
-            result = UserDAO.insertUser(temp);
-        } catch (SQLException e) {
-            System.out.println("Problem occurred while inserting user: " + e);
+        //TODO: FIX THIS.
+        if (userType.getSelectionModel().getSelectedItem().equals("City officials") && title.getText().trim().isEmpty()) {
+            Helper.showAlert("Information Dialog", "Title required if you are a city official");
+            return;
         }
 
-        Alert alert = new Alert(AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText(null);
-        alert.setContentText(result);
-        alert.showAndWait();
 
-        if (result == "New record added")
-            Platform.exit();
+
+        User temp = new User(username.getText(), email.getText(), password.getText(), userType.getSelectionModel().getSelectedItem().toString());
+
+
+
+        // Insert the new user to database, return the result of the insertion
+//        try {
+////            Helper.showAlert("Error", "B");
+//            UserDAO.insertUser(temp);
+//        } catch (Exception e) {
+//            System.out.println("~~~");
+//            Helper.showAlert("Error", "A");
+//
+//        }
+        try {
+            UserDAO.insertUser(temp);
+        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+            Helper.showAlert("Error", e.getMessage());
+            return;
+
+        } catch (SQLException e) {
+//            e.printStackTrace();
+            Helper.showAlert("Database Error", e.getMessage());
+            return;
+
+        }
+
+        if (temp.getUserType().equals("City Official")) {
+            CityOfficial cityOfficial = new CityOfficial(username.getText(), email.getText(), city.getSelectionModel().getSelectedItem().toString(), state.getSelectionModel().getSelectedItem().toString(), title.getText());
+            try {
+                CityOfficialDAO.insertCityOfficial(cityOfficial);
+                Helper.showAlert("Success", "New account registered. Please wait for approval.");
+            } catch (Exception e) {
+                Helper.showAlert("Database Error", e.getMessage());
+                //TODO: DELETE USER INSERTED
+                System.out.println("Not able to insert city_official, NEED TO DELETE USER INSERTED");
+            }
+
+        } else {
+            Helper.showAlert("Success", "New account registered");
+        }
+
+        Helper.changeScene(ae, this.getClass(), Helper.LOGIN);
+
+
     }
 
     /*

@@ -10,11 +10,11 @@ import java.util.*;
 public class DBUtil {
 
     private static final String JDBC_DRIVE = "com.mysql.jdbc.Driver";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/test";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb";
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "1234";
 
-    private static Connection con = null;
+    public static Connection con = null;
 
     public static void dbConnection() throws SQLException, ClassNotFoundException {
         try {
@@ -56,12 +56,12 @@ public class DBUtil {
                 result.add(row);
             }
         }
-        catch (SQLException ex) {
-            // handle any errors
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
-        }
+//        catch (SQLException ex) {
+//            // handle any errors
+//            System.out.println("SQLException: " + ex.getMessage());
+//            System.out.println("SQLState: " + ex.getSQLState());
+//            System.out.println("VendorError: " + ex.getErrorCode());
+//        }
         finally {
             // it is a good idea to release resources in a finally{} block in reverse-order of their creation
             // if they are no-longer needed
@@ -92,11 +92,11 @@ public class DBUtil {
             dbConnection();
             stmt = con.createStatement();
             updatedRows = stmt.executeUpdate(update);
-        } catch (SQLException ex) {
-            // handle any errors
-            System.out.println("SQLException: " + ex.getMessage());
-            System.out.println("SQLState: " + ex.getSQLState());
-            System.out.println("VendorError: " + ex.getErrorCode());
+//        } catch (SQLException ex) {
+//            // handle any errors
+//            System.out.println("SQLException: " + ex.getMessage());
+//            System.out.println("SQLState: " + ex.getSQLState());
+//            System.out.println("VendorError: " + ex.getErrorCode());
         } finally {
             if (stmt != null) {
                 try {
@@ -108,4 +108,7 @@ public class DBUtil {
         }
         return updatedRows;
     }
+
+
+
 }

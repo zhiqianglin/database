@@ -10,8 +10,11 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
          String PATH = "fxml/";
-        Parent root = FXMLLoader.load(getClass().getResource(PATH + Helper.CHOOSE_FUNCTIONALITY_ADMIN));
-//        Parent root = FXMLLoader.load(getClass().getResource(PATH + Helper.CHOOSE_FUNCTIONALITY_CITY_OFFICIAL));
+//        Parent root = FXMLLoader.load(getClass().getResource(PATH + Helper.CHOOSE_FUNCTIONALITY_ADMIN));
+//        Parent root = FXMLLoader.load(getClass().getResource(PATH + Helper.PENDING_DATA_POINTS));
+
+        Parent root = FXMLLoader.load(getClass().getResource(PATH + Helper.CHOOSE_FUNCTIONALITY_CITY_OFFICIAL));
+//        Parent root = FXMLLoader.load(getClass().getResource(PATH + Helper.LOGIN));
 //        Parent root = FXMLLoader.load(getClass().getResource(PATH + Helper.CITY_SCIENTIST));
 
 //        Parent root = FXMLLoader.load(getClass().getResource("fxml/registration.fxml"));

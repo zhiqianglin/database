@@ -24,7 +24,7 @@
       <Button layoutX="218.0" layoutY="321.0" mnemonicParsing="false" onAction="#back" prefHeight="27.0" prefWidth="61.0" text="Back" />
       <Button fx:id="submit" layoutX="408.0" layoutY="321.0" mnemonicParsing="false" onAction="#submit" text="Submit" />
       <TextField fx:id="dataValue" layoutX="225.0" layoutY="267.0" prefHeight="27.0" prefWidth="286.0" />
-      <ChoiceBox fx:id="locationNames" layoutX="225.0" layoutY="126.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="locationName" layoutX="225.0" layoutY="126.0" prefWidth="150.0" />
       <ChoiceBox fx:id="dataType" layoutX="225.0" layoutY="221.0" prefWidth="150.0" />
       <DatePicker fx:id="date" layoutX="225.0" layoutY="182.0" prefHeight="27.0" prefWidth="176.0" />
       <JFXTimePicker fx:id="time" defaultColor="#464542" layoutX="440.0" layoutY="181.0" prefHeight="29.0" prefWidth="100.0" />
